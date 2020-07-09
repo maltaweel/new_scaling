@@ -45,8 +45,8 @@ class FitAnalysis:
             #result=constant*math.pow(x,beta)
                 
             
-            avg=math.log(self.avg_hollows[i])
-            #avg=self.avg_hollows[i]
+            avg=math.log(self.avg_structure[i])
+            #avg=self.avg_structure[i]
             
             error+=math.pow(result-avg,2)
           
@@ -57,23 +57,17 @@ class FitAnalysis:
         
         return error
     
-    def loadData(self,size):
+    def loadData(self):
         
         pn=os.path.abspath(__file__)
         pn=pn.split("src")[0]
         
         self.site=[]
         self.area=[]
-        self.chalc=[]
-        self.eba=[]
-        self.mba=[]
-        self.biggest=[]
-        self.firsts=[]
-        self.mids=[]
-        self.ends=[]
-        self.number=[]
+        self.upper=[]
+        self.lower=[]
         self.weighted=[]
-        self.avg_hollows=[]
+        self.avg_structure=[]
         self.std=[]
 
         #The data file path is now created where the data folder and dataFile.csv is referenced
@@ -85,21 +79,22 @@ class FitAnalysis:
         #We can use a try clause to read the file
         try:
             reader = csv.reader(f)
-            i=0
-            
+          
             #for loop, skipping the first line (i.e., when i is 0)
             for row in reader:
-                if(i==0):
-                    i=i+1
-                    continue
-               
-                if(float(row[2])<size):
-                    continue
+                
+                site=row['Site']
+                area=row['Area']
+                structure_area=row['Structure Area']
+                maximum_area=row['Maximum Area']
+                minimum_area=row['Minimum Area']
                                 
-                self.site.append(str(row[0]))
-                self.area.append(float(row[2]))
-
-                self.avg_hollows.append(float(row[3]))
+                self.site.append(site)
+                self.area.append(area)
+              
+                self.avg_structure.append(float(structure_area))
+                self.upper(float(maximum_area))
+                self.lower(float(minimum_area))
 
        
         #then close the file
@@ -157,8 +152,8 @@ class FitAnalysis:
   
       #      if(a<1):
       #          continue
-            fst=math.log(self.avg_hollows[i])
-            #fst=self.avg_hollows[i]
+            fst=math.log(self.avg_structure[i])
+            #fst=self.avg_structure[i]
             if(1000000000.0==fa.best):
                 continue
             
@@ -247,8 +242,8 @@ class FitAnalysis:
         
         filename=path+'/'+'scaling_avg_width_orig'+str(n)+'.csv'
         
-        fieldnames = ['Site','Area',"Temple Size","Estimated Size","Constant","Beta","Fitted Beta","Residual","Estimated Average",
-                      "Residual Error","Average Error"]
+        fieldnames = ['Site','Area',"Structure Size","Estimated Size","Constant","Beta","Fitted Beta","Estimate Ratio","Estimated Average",
+                      "Estimate Error"]
         
        
         self.medianError=[]
@@ -270,7 +265,7 @@ class FitAnalysis:
                             else:
                                 rnge=self.range[site]
                                  
-                            obs=math.log(self.avg_hollows[s])
+                            obs=math.log(self.avg_structure[s])
                             
                             self.logHollows.append(obs)
                             self.logSizes.append(math.log(self.area[s]))
@@ -280,12 +275,12 @@ class FitAnalysis:
                            
                             res=0
                             
-                            if(calculated>0 and self.avg_hollows[s]>1):
+                            if(calculated>0 and self.avg_structure[s]>1):
                                 res=math.log(obs/calculated)
                             
                             est=math.pow(math.e,calculated)
                         #    est=calculated
-                            rc=math.fabs(est-self.avg_hollows[s])
+                            rc=math.fabs(est-self.avg_structure[s])
                             
                             avgError=rc
                             
@@ -293,9 +288,9 @@ class FitAnalysis:
                             self.totalError+=avgError
                             self.totalL+=1
                             writer.writerow({'Site': str(self.site[s]),'Area':str(self.area[s]),
-                                'Temple Size':str(self.avg_hollows[s]),"Estimated Size": str(calculated),'Constant':str(self.bestFitConstant),
-                                'Beta':str(self.goodB),'Fitted Beta':str(rnge), "Residual":str(res),"Estimated Average":str(est),
-                                "Residual Error":str(rc),"Average Error":str(avgError)})
+                                'Structure Size':str(self.avg_structure[s]),"Estimated Size": str(calculated),'Constant':str(self.bestFitConstant),
+                                'Beta':str(self.goodB),'Fitted Beta':str(rnge), "Estimate Ratio":str(res),"Estimated Average":str(est),
+                                "Estimate Error":str(rc)})
 
 newllst=[]
 const=[]
@@ -311,11 +306,11 @@ sampleNumber=[]
 
 size=0.0
 fa = FitAnalysis()
-fa.loadData(size)
+fa.loadData()
 solution=fa.rangeDetermine()
 
 fa.rangeOfFit()
-fa.printResult('temple-area')
+fa.printResult('structure-area')
 #fa.printErrorTable(method+str(i)+str("_"+str(n)))
     
 #v=min(fa.llst)
