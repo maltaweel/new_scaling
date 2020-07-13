@@ -78,23 +78,23 @@ class FitAnalysis:
         
         #We can use a try clause to read the file
         try:
-            reader = csv.reader(f)
+            reader = csv.DictReader(f)
           
             #for loop, skipping the first line (i.e., when i is 0)
             for row in reader:
                 
                 site=row['Site']
-                area=row['Area']
-                structure_area=row['Structure Area']
-                maximum_area=row['Maximum Area']
-                minimum_area=row['Minimum Area']
+                area=float(row['Site Area'])
+                structure_area=float(row['Structure Area'])
+                maximum_area=float(row['Maximum Area'])
+                minimum_area=float(row['Minimum Area'])
                                 
                 self.site.append(site)
                 self.area.append(area)
               
                 self.avg_structure.append(float(structure_area))
-                self.upper(float(maximum_area))
-                self.lower(float(minimum_area))
+                self.upper.append(float(maximum_area))
+                self.lower.append(float(minimum_area))
 
        
         #then close the file
@@ -150,8 +150,8 @@ class FitAnalysis:
             s=self.site[i]
             a=self.area[i]
   
-      #      if(a<1):
-      #          continue
+    #      if(a<1):
+    #          continue
             fst=math.log(self.avg_structure[i])
             #fst=self.avg_structure[i]
             if(1000000000.0==fa.best):
