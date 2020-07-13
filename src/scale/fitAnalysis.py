@@ -88,7 +88,11 @@ class FitAnalysis:
                 structure_area=float(row['Structure Area'])
                 maximum_area=float(row['Maximum Area'])
                 minimum_area=float(row['Minimum Area'])
-                                
+                pn=int(row["period n."])
+
+                if pn<5:
+                    continue   
+                                            
                 self.site.append(site)
                 self.area.append(area)
               
@@ -315,6 +319,7 @@ fa.printResult('structure-area')
     
 #v=min(fa.llst)
 nn=0
+print("Finished")
 
 '''
 for s in fa.number:
