@@ -88,9 +88,9 @@ class FitAnalysis:
                 structure_area=float(row['Structure Area'])
                 maximum_area=float(row['Maximum Area'])
                 minimum_area=float(row['Minimum Area'])
-                pn=int(row["period n."])
+                pn=int(row["Period n."])
 
-                if pn<5:
+                if pn>=5:
                     continue   
                                             
                 self.site.append(site)
