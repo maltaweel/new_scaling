@@ -86,8 +86,8 @@ class FitAnalysis:
                 site=row['Site']
                 area=float(row['Site Area'])
                 structure_area=float(row['Structure Area'])
-                maximum_area=float(row['Maximum Area'])
-                minimum_area=float(row['Minimum Area'])
+            #    maximum_area=float(row['Maximum Area'])
+            #   minimum_area=float(row['Minimum Area'])
                 pn=int(row["Period n."])
 
                 if pn>=5:
@@ -97,8 +97,8 @@ class FitAnalysis:
                 self.area.append(area)
               
                 self.avg_structure.append(float(structure_area))
-                self.upper.append(float(maximum_area))
-                self.lower.append(float(minimum_area))
+            #   self.upper.append(float(maximum_area))
+            #   self.lower.append(float(minimum_area))
 
        
         #then close the file
@@ -321,53 +321,3 @@ fa.printResult('structure-area')
 nn=0
 print("Finished")
 
-'''
-for s in fa.number:
-    nn+=s
-        
-    if nn==0:
-        continue
-        
-    error=v/float(nn)
-    newllst.append(error)
-    const.append(fa.bestFitConstant)
-    betas.append(fa.goodB)
-    sizes.append(fa.area[s])
-    totalError.append(fa.totalError)
-    totalLines.append(fa.totalL)
-    medianError.append(np.median(fa.medianError))
-        
-    r2=fa.rsquared(fa.logSizes,fa.logHollows)
-    rsquared.append(r2)
-    sampleNumber.append(len(fa.site))
-        
-pn=os.path.abspath(__file__)
-pn=pn.split("src")[0]
-path=pn+'/output/'
-        
-filename=path+'best_fit_validation.csv'
-        
-fieldnames = ['Hollow.Ways','Site.Size','Constant','Beta','Error', 'Median Error', 'RSquared','Sample Number']     
-with open(filename, 'wb') as csvf:
-        writer = csv.DictWriter(csvf, fieldnames=fieldnames)
-
-        writer.writeheader()
-        tt=sizes[0]
-        hn=0           
-        for t in range(0,len(newllst)):
-            fa.medianError[:]
-            
-            if sizes[t] == tt:
-                hn+=1
-                tt=sizes[t]
-            else:
-                hn=1
-                tt=sizes[t]
-            
-            print('Size: '+str(sizes[t])+ " Error: "+str(float(totalError[t]/totalLines[t]))+
-                  " Median Error: "+str(medianError[t]) 
-                  +" Constant: "+str(const[t])+ " Beta: "+str(betas[t]))
-            writer.writerow({'Hollow.Ways':str(hn),'Site.Size': str(sizes[t]),'Beta':str(betas[t]),'Constant':str(const[t]),
-                             'Error':str(float(totalError[t]/totalLines[t])),'Median Error':str(str(medianError[t])),
-                             'RSquared':str(rsquared[t]), 'Sample Number':str(sampleNumber[t])})
-'''
