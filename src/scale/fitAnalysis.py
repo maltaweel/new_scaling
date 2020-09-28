@@ -1,37 +1,71 @@
 '''
+Scaling analysis for urban contexts. 
+
+
+Algorithm based on scaling such as from:
+Lobo, J., Bettencourt, L.M.A., Strumsky, D., West, G.B., 2013. 
+Urban Scaling and the Production Function for Cities. 
+PLoS ONE 8, e58407. https://doi.org/10.1371/journal.pone.0058407
+
 Created on Aug 7, 2017
 
-@author: maltaweel
+@author: 
 '''
 
 import math
 import csv
 import os
-import numpy as np
-from sklearn.metrics import r2_score
+
 from scipy.stats import linregress
+
 
 class FitAnalysis:
     
+    '''
+    Initialization (constructor) for the class.
+    '''
     def __init__(self):
+        
+        #constant is the constants to try in the scaling analysis
         self.constants=[]
+        
+        #start the initial constant with 1 as the default, with best fit fixed to this
         self.bestFitConstant=1
-        self.memory1=[0.0]
-        self.memory2=[0.1]
+        
+        #range of values for give site and area
         self.range={}
+        
+        #fitted beta to keep
         self.goodB=1000.0
+        
+        #best fit value
         self.best=1000000000.0
+        
+        #dictionary to contain error values
         self.dict=  {}
+        
+        #list for storing error values
         self.llst=[]
+        
+        #total error of the fit analysis
         self.totalError=0
+        
+        #total iterations
         self.totalL=0
         
+        #set the initial constants to try
         a=0
         for i in range(1,600):
             self.constants.append(a+0.1)
             a+=1.0
             i+=1
-              
+    
+    '''
+    Method to apply the fit measure applying scaling based on Lobo et al. 2013.
+    @param constant: the constant value in the function
+    @param beta: the beta value
+    @return: error from the constant and beta values attempted.
+    '''       
     def fitMeasure(self,constant,beta):
         error=0
 
@@ -57,6 +91,9 @@ class FitAnalysis:
         
         return error
     
+    '''
+    Load data from input.csv file from data folder.
+    '''
     def loadData(self):
         
         pn=os.path.abspath(__file__)
@@ -70,28 +107,30 @@ class FitAnalysis:
         self.avg_structure=[]
         self.std=[]
 
-        #The data file path is now created where the data folder and dataFile.csv is referenced
+        #The data file path is now created where the data folder is referenced
         path=os.path.join(pn,"data","input.csv")
         
         f = open(path, 'rU')
         
         
-        #We can use a try clause to read the file
+        #use a try clause to read the file to catch input error
         try:
             reader = csv.DictReader(f)
           
-            #for loop, skipping the first line (i.e., when i is 0)
+            #for loop in the file rows
             for row in reader:
                 
+                #input the site and structure areas
                 site=row['Site']
                 area=float(row['Site Area'])
                 structure_area=float(row['Structure Area'])
             #    maximum_area=float(row['Maximum Area'])
             #   minimum_area=float(row['Minimum Area'])
                 pn=int(row["Period n."])
-
-                if pn>=5:
-                    continue   
+                
+                #this is to filter given periods (if needed)
+                #if pn>=5:
+                #    continue   
                                             
                 self.site.append(site)
                 self.area.append(area)
@@ -105,11 +144,14 @@ class FitAnalysis:
         finally:
             f.close()
             
-
-    def cost(self,a,b):
+    '''
+    Method to find the best fits for constant under given beta.
+    @param b: beta value for the fit function
+    @return: best fit based on error of beta and constant values
+    '''
+    
+    def cost(self,b):
         
-        if a<0:
-            a=0
         if b<0:
             b=0
             
@@ -126,19 +168,22 @@ class FitAnalysis:
                     self.goodB=beta
         
         return self.best
-            
+    
+    '''
+    Method used to determine range to try for beta.
+    '''     
     def rangeDetermine(self):
             
         solution=0.05
         i = 0
-        old_cost = self.cost(0.0,0.0)
+        old_cost = self.cost(0.0)
         currentI=0.01
    
         while i <150:
            
    
             
-            new_cost = self.cost(currentI,currentI)
+            new_cost = self.cost(currentI)
     
             if old_cost > new_cost:
                 old_cost = new_cost
@@ -146,9 +191,10 @@ class FitAnalysis:
             i += 1
             currentI+=0.01
             
-
-        return solution, old_cost
-
+    '''
+    Using all sites, method to find the range of best fit for 
+    beta and constant and update fit for sites.
+    '''
     def rangeOfFit(self):
         for i in range(0,len(self.site)):
             s=self.site[i]
@@ -189,12 +235,17 @@ class FitAnalysis:
             
             
             self.range.update({s:bf})
-            
+    
+    '''
+    Error results for fits for given sites.
+    Method outputs errors to error file in output.
+    @param method: name of method for error results used for file name
+    '''     
     def printErrorTable(self,method):
         pn=os.path.abspath(__file__)
         pn=pn.split("src")[0]
         
-        #The data file path is now created where the data folder and dataFile.csv is referenced
+        #The data file path is now created 
         path=os.path.join(pn,'output')
         
         filename=path+'/'+'error_results'+method+'.csv'
@@ -227,15 +278,11 @@ class FitAnalysis:
                 
                 writer.writerow({'Constant':str(const),
                                 'Beta':str(beta),'Overall Error':str(v)})
+    '''
+    Print outputs from fit analysis for scaling.
+    @param n: the typeof analysis used for the output file name
     
-    """
-    Return R^2 where x and y are array-like.
-    """
-    def rsquared(self,x, y):
-
-        slope, intercept, r_value, p_value, std_err = linregress(x, y)
-        return r_value**2         
-            
+    '''            
     def printResult(self,n):
         
         pn=os.path.abspath(__file__)
@@ -296,22 +343,12 @@ class FitAnalysis:
                                 'Beta':str(self.goodB),'Fitted Beta':str(rnge), "Estimate Ratio":str(res),"Estimated Average":str(est),
                                 "Estimate Error":str(rc)})
 
-newllst=[]
-const=[]
-betas=[]
-sizes=[]
-method='max_road'
-totalError=[]
-totalLines=[]
-medianError=[]
-rsquared=[]
-sampleNumber=[]
 
 
-size=0.0
+#the main steps to run the analysis
 fa = FitAnalysis()
 fa.loadData()
-solution=fa.rangeDetermine()
+fa.rangeDetermine()
 
 fa.rangeOfFit()
 fa.printResult('structure-area')

@@ -1,111 +1,30 @@
-"Region","Site","House Area (m^2)","Structure Area","Period","Period n.","Sub-Period","Reference","Note","n of houses","Site Area"
-"Northern Levant (west Syria-Lebanon)","Tell Arqa","32-65",65,"Early Bronze Age",1,,"Thalmann 2006",,2,12
-"Northern Mesopotamia","Melebiye",243,243,"Early Bronze Age",1,,"Pfälzner 2011","House B1",1,3.2
-"Northern Mesopotamia","Raqa'i",81,81,"Early Bronze Age",1,,"Pfälzner 2011","House 8A",1,0.5
-"Northern Mesopotamia","Abu Hagera",144,144,"Early Bronze Age",1,,"Pfälzner 2011","Sector A",1,4
-"Northern Mesopotamia","Tell Chuera",378,378,"Early Bronze Age",1,,"Pfälzner 2011","House III",1,70
-"Northern Mesopotamia","Tell Halawa A",122,122,"Early Bronze Age",1,,"Pfälzner 2011","House 3-2/22",1,12
-"Northern Mesopotamia","Tell Halawa B",110,110,"Early Bronze Age",1,,"Pfälzner 2011","House B7",1,1
-"Northern Mesopotamia","Tell Selenkehiye",175,175,"Early Bronze Age",1,,"Pfälzner 2011","House 8",1,12
-"Northern Mesopotamia","Tell Selenkehiye",247,247,"Early Bronze Age",1,,"Pfälzner 2011","""Mansion""",1,12
-"Northern Mesopotamia","Habuba Khabira",248,248,"Early Bronze Age",1,,"Pfälzner 2011","House I/II",1,18
-"Northern Mesopotamia","Tell Taya",270,270,"Early Bronze Age",1,,"Pfälzner 2011","House S1",1,101
-"Northern Mesopotamia","Tell Taya",700,700,"Early Bronze Age",1,"Sargonic period","Reade 1971; Pälzner 2011","House W1: a mansion according to Reade 1971 or Elite House in Pfälzner 2011",1,101
-"Northern Mesopotamia","Tell Chuera",650,650,"Early Bronze Age",1,,"Pruß 2019","Steinbau 5: Elite House according to Pfälzner 2011 or palace in Pru§ 2019",1,70
-"Northern Mesopotamia","Tell Bderi","24-170",170,"Early Bronze Age",1,,"Pfälzner 2011",,12,7.5
-"Southern Levant","Beth Shean",150,150,"Early Bronze Age",1,"EBI","Greenberg 2019","Stratum M3",1,4
-"Southern Levant","Tel Bet Yerah","50-64",64,"Early Bronze Age",1,"EBII","Greenberg 2019",,2,25
-"Southern Levant","Yiftah'el",90,90,"Early Bronze Age",1,,"Ben-Tor 1992","Curvilinear building",1,4
-"Southern Levant","Arad",49,49,"Early Bronze Age",1,,"Ben-Tor 1992","Single room buildling",1,0.25
-"Southern Levant","Tell el-Farah (N)",36,36,"Early Bronze Age",1,,"Ben-Tor 1992","Single Room Building",1,18
-"Southern Levant","Meser",56,56,"Early Bronze Age",1,,"Ben-Tor 1992",,1,50
-"Southern Levant","Arad",100,100,"Early Bronze Age",1,,"Ben-Tor 1992",,1,0.25
-"Southern Levant","Tell el-Farah (N)",120,120,"Early Bronze Age",1,,"Ben-Tor 1992",,1,18
-"Southern Levant","Et-tell/Ai",200,200,"Early Bronze Age",1,,"Ben-Tor 1992",,1,10
-"Southern Levant","Tel Numayra",120,120,"Early Bronze Age",1,"EBIII","Greenberg 2019",,1,0.5
-"Southern Mesopotamia","Ur","24-268",268,"Early Bronze Age",1,"Ur III 2100-2000 BC","Battini-Villard 1999",,,90
-"Southern Mesopotamia","Ur",501,501,"Early Bronze Age",1,"Ur III 2100-2000 BC","Battini-Villard 1999","Paternoster row House XI",1,90
-"Southern Mesopotamia","Abu Salabikh","240-504",504,"Early Bronze Age",1,"Early Dynastic (2700-2350 BC)","Postgate 1990; Matthews and Postgate 1987",,,12
-"Southern Mesopotamia","Khafaja","35-528",528,"Early Bronze Age",1,"Early Dynastic (2700-2350 BC)","Delougaz, Hill and Lloyd 1967",,,40
-"Southern Mesopotamia","Tell Asmar/Eshnunna","44-248",248,"Early Bronze Age",1,"Early Dynastic (2700-2350 BC)","Delougaz, Hill and Lloyd 1967",,,100
-"Southern Mesopotamia","Tell Fara/Shuruppak","120-400",400,"Early Bronze Age",1,"Early Dynastic (2700-2350 BC)","Heinrich 1931",,,120
-"Northern Levant (west Syria-Lebanon)","Ebla","43-121",121,"Middle Bronze Age",2,,"Ascalone et al. 2014",,,61
-"Northern Levant (west Syria-Lebanon)","Umm el-Marra",200,200,"Middle Bronze Age",2,,"Curvers et al. 1997",,,25
-"Southern Levant","Megiddo","70-100",100,"Middle Bronze Age",2,,"Ben-Dov 1992","Stratum XII",3,50
-"Southern Levant","Beth Shemesh",50,50,"Middle Bronze Age",2,,"Ben-Dov 1992","Stratum V",1,2.8
-"Southern Levant","Tell Beit Mirsim",88,88,"Middle Bronze Age",2,,"Ben-Dov 1992",,1,3
-"Northern Mesopotamia","Assur",1090,1090,"Middle Bronze Age",2,"Old Babylonian and Isin-larsa","Miglus 1999","""Akkadian House""",1,55
-"Southern Mesopotamia","Tell Asmar/Eshnunna",560,560,"Middle Bronze Age",2,"Old Babylonian and Isin-larsa","Miglus 1999",,2,100
-"Southern Mesopotamia","Tello",290,290,"Middle Bronze Age",2,,"Miglus 1999",,1,250
-"Southern Mesopotamia","Haradum","30-165",165,"Middle Bronze Age",2,"Old Babylonian and Isin-larsa","Miglus 1999",,17,1.5
-"Southern Mesopotamia","Isin","44-380",380,"Middle Bronze Age",2,"Old Babylonian and Isin-larsa","Miglus 1999",,13,100
-"Southern Mesopotamia","Larsa","177-534",534,"Middle Bronze Age",2,"Old Babylonian and Isin-larsa","Miglus 1999",,3,200
-"Southern Mesopotamia","Nippur","26-275",275,"Middle Bronze Age",2,"Old Babylonian and Isin-larsa","Miglus 1999",,19,135
-"Southern Mesopotamia","Tell ed-Der","210-700",700,"Middle Bronze Age",2,"Old Babylonian and Isin-larsa","Miglus 1999",,9,53
-"Southern Mesopotamia","Shaduppum","32-280",280,"Middle Bronze Age",2,"Old Babylonian and Isin-larsa","Miglus 1999",,17,1
-"Southern Mesopotamia","Ur","25-455",455,"Middle Bronze Age",2,"Old Babylonian and Isin-larsa","Miglus 1999",,55,90
-"Northern Levant","Kanesh","23-224",224,"Middle Bronze Age",2,,"Hertel 2014",,49,50
-"Northern Levant (west Syria-Lebanon)","Ugarit","40-675",675,"Late Bronze Age",3,,"Schloen 2001",,44,22
-"Northern Levant (west Syria-Lebanon)","Tell Hadidi",242,242,"Late Bronze Age",3,,"Dornemann 1981",,1,56
-"Northern Levant (west Syria-Lebanon)","Alalakh","96-475",475,"Late Bronze Age",3,,"McClellan 1997","Largest house House 37/IV",15,22
-"Northern Levant (west Syria-Lebanon)","Tell al-Banat",100,100,"Late Bronze Age",3,,"McClellan 1997",,1,30
-"Northern Mesopotamia","Nuzi","74-875",875,"Late Bronze Age",3,"Middle Assyrian","Miglus 1999",,38,4
-"Northern Mesopotamia","Assur","125-750",750,"Late Bronze Age",3,"Middle Assyrian","Miglus 1999",,9,55
-"Northern Mesopotamia","Tell Bazi","40-240",240,"Late Bronze Age",3,,"Otto 2006","""Weststadt"" Phase II",53,40
-"Northern Mesopotamia","Emar","48-141",141,"Late Bronze Age",3,,"McClellan 1997",,15,27
-"Northern Mesopotamia","Tell Fray","136-154",154,"Late Bronze Age",3,,"McClellan 1997",,2,21
-"Northern Mesopotamia","Tell Hadidi","176-250",250,"Late Bronze Age",3,,"McClellan 1997",,2,56
-"Northern Mesopotamia","Tell Halawa","42-61",61,"Late Bronze Age",3,,"McClellan 1997",,8,12
-"Northern Mesopotamia","Munbaqa/Ekalte","65-254",254,"Late Bronze Age",3,,"McClellan 1997",,11,15
-"Northern Mesopotamia","el-Qitar","53-223",223,"Late Bronze Age",3,,"McClellan 1997",,11,2
-"Southern Levant","Megiddo","141-170",170,"Late Bronze Age",3,,"Gilboa et al. 2014","Building 3024, 2158",2,50
-"Northern Levant","Tell Hadidi",242,242,"Late Bronze Age",3,,"Gilboa et al. 2014","Tablet Building",1,56
-"Southern Levant","Tel Yin'am",190,190,"Late Bronze Age",3,,"Gilboa et al. 2014","Building 1 Str. XIII",1,1.2
-"Southern Levant","Hazor","176-240",240,"Late Bronze Age",3,,"Gilboa et al. 2014","Building 6215 and Building in Area S Str. 1",2,71
-"Southern Levant","Tell es-Safi/Gath",200,200,"Late Bronze Age",3,,"Gilboa et al. 2014","Area E4b",1,50
-"Southern Levant","Megiddo",240,240,"Late Bronze Age",3,,"Gonen 1992",,1,50
-"Southern Levant","Tel Batash",99,99,"Late Bronze Age",3,,"Gonen 1992",,1,2.5
-"Southern Levant","Tell el-Ajjul","187-396",396,"Late Bronze Age",3,,"Oren 1992","""Palace"" II and Building AM",2,5
-"Southern Levant","Tell Beir Mirsim",300,300,"Late Bronze Age",3,,"Oren 1992","Stratum D",1,3
-"Southern Levant","Ta'anakh",360,360,"Late Bronze Age",3,,"Oren 1992","top of western glacis building",1,1
-"Southern Levant","Ashdod",192,192,"Late Bronze Age",3,,"Oren 1992","Strata 16-15 Area B",1,34
-"Southern Levant","Tell Abu Hawam","37-82",82,"Iron Age ",4,"IAI-II","Braemer 1982","Houses 34, 41, 44, 45, 13",5,1
-"Southern Levant","Et-tell/Ai",50,50,"Iron Age ",4,,"Braemer 1982","House 17",1,10
-"Southern Levant","Tell el Farah (N)","52-150",150,"Iron Age",4,,"Braemer 1982",,10,18
-"Southern Levant","Shiloh","43-81",81,"Iron Age",4,,"Braemer 1982","Houses 152, 189, 207, House of Area B",4,4
-"Southern Levant","Ashdod ",83,83,"Iron Age",4,"IAIIB","Braemer 1982","House 1",1,34
-"Northern Levant (west Syria-Lebanon)","Tell Sukas",80,80,"Iron Age",4,"Iron Age II (pre-Assyrian)","Lund 1986","Complex V level H",,1.9
-"Northern Levant","Hama","23-221",221,"Iron Age",4,,"Braemer 1982","Levels F and E",2,12
-"Northern Levant (west Syria-Lebanon)","Tell Tweini","75-130",130,"Iron Age",4,"Iron Age II","Bretschneider&Leberghe 2008","Phase 6D",2,12
-"Northern Levant (west Syria-Lebanon)","Chatal Höyük","33-228",228,"Iron Age",4,"Iron Age I","Braemer 1982","Levels 5-4 houses",7,9
-"Northern Levant (west Syria-Lebanon)","Judaida","31-88",88,"Iron Age",4,,"Braemer 1982","Levels 9-7",3,3
-"Northern Levant (west Syria-Lebanon)","Tell Keisan","33-108",108,"Iron Age",4,,"Braemer 1982","Levels 9b-5",8,6
-"Southern Levant","Gezer","160-240",240,"Iron Age",4,"Iron Age I","Gilboa et al. 2014","Field VI Str. 5B ",2,7
-"Southern Levant","Tell Beit Mirsim","42-220",220,"Iron Age",4,"Iron Age I","Braemer 1982","Level A: House NE11/1 and House SE 12B-3, Str. B1-2",2,3
-"Southern Levant","Megiddo",200,200,"Iron Age",4,"Iron Age I","Gilboa et al. 2014","Building K-4 Str. VIA",1,50
-"Southern Levant","Tel Qasile","40-196",196,"Iron Age",4,"Iron Age I","Braemer 1982; Gilboa et al. 2014",,8,2
-"Southern Levant","Tel Masos","160-240",240,"Iron Age",4,"Iron Age IIA","Gilboa et al. 2014","Buildings 480, 314 and 410 ",3,1.3
-"Southern Levant","Megiddo","80-171",171,"Iron Age",4,"Iron Age IIA","Gilboa et al. 2014","Buildings 2081, 2100, 2111, 2112",4,50
-"Southern Levant","Shechem",83,83,"Iron Age",4,"Iron Age IIA","Gilboa et al. 2014","House B in Field VII",1,11
-"Southern Levant","Beersheba","38-120",120,"Iron Age",4,"Iron Age II pre-Assyrian","Herzog and Singer-Avitz 2016","Stratum II Buildings 1441, 956, 75, 76, 25, 770, 812, 630, 855",9,1.2
-"Southern Levant","Horbat Rosh Zayit",250,250,"Iron Age",4,"9th-8th centuries","Gal 2000","Stratum II ""Fort"": rich farm house",1,2.5
-"Southern Levant","Hazor","46-182",182,"Iron Age",4,,,"levels IX-V",13,71
-"Northern Mesopotamia","Assur","36-1750",1750,"Neo-Assyrian",5,,"Castel 1992; Miglus 1999",,30,55
-"Northern Mesopotamia","Nimrud","160-180",180,"Neo-Assyrian",5,,"Castel 1992; Miglus 1999",,4,360
-"Northern Mesopotamia","Tell Billa","29-205",205,"Neo-Assyrian",5,,"Miglus 1999",,3,12
-"Southern Levant","Megiddo","55-100",100,"Neo-Assyrian",5,,"Lamon&Shipton 1938","Level III",6,50
-"Northern Levant (west Syria-Lebanon)","Tell Sukas",75,75,"Neo-Assyrian/Babylonian",5,,"Lund 1986","Complex VIII level G3",1,1.9
-"Southern Mesopotamia","Nippur","90-440",440,"Neo-Babylonian",6,,"Miglus 1999",,3,135
-"Southern Mesopotamia","Uruk","95-570",570,"Neo-Babylonian",6,,"Miglus 1999",,10,50
-"Southern Mesopotamia","Babylon","190-745",745,"Neo-Babylonian",6,,"Miglus 1999",,15,900
-"Southern Mesopotamia","Babylon",1475,1475,"Neo-Babylonian",6,,"Miglus 1999","House III: very large house",1,900
-"Southern Mesopotamia","Ur","200-305",305,"Neo-Babylonian",6,,"Miglus 1999",,6,90
-"Southern Mesopotamia","Ur",1490,1490,"Neo-Babylonian",6,,"Miglus 1999","House I: very large house",1,90
-"Northern Levant (west Syria-Lebanon)","Al Mina","72-480",480,"Persian",7,,"Woolley 1938","Levels 4-3: Houses A, B, D, E, J",5,2
-"Northern Levant (west Syria-Lebanon)","Chatal Höyük","52-60",60,"Persian",7,,"Haines 1971","Level 3 Area I houses",4,9
-"Southern Levant","Tell Keisan",53,53,"Persian",7,,"Briend and Humbert 1980","Building B",1,6
-"Southern Levant","Tell Abu Hawam",70,70,"Persian",7,,"Hamilton 1934","Stratum II Building 4",1,1
-"Southern Levant","Tel Ya'oz",140,140,"Persian",7,,"Fischer et al. 2008: 123-126","Area C Building",1,1.5
-"Southern Levant","Ashkelon",285,285,"Persian",7,,"Stager et al. 2008","Phase 13 Villa",1,60
-"Southern Levant","Ashkelon",196,196,"Persian",7,,"Stager et al. 2008","Phase 10 Villa",1,60
-"Northern Levant (west Syria-Lebanon)","Tell el Burak",21,21,"Persian",7,,"Kamlah and Sader 2003","Two-Room Building",1,1.8
+Site,Structure Area,Site Area,Period n.
+Assur,36,55,2
+Assur,1750,55,2
+Nimrud,160,360,2
+Nimrud,180,360,2
+Tell Billa,29,12,2
+Tell Billa,205,12,2
+Megiddo,55,50,2
+Megiddo,100,50,2
+Tell Sukas,75,1.9,2
+Nippur,90,135,2
+Nippur,440,135,2
+Uruk,95,50,2
+Uruk,570,50,2
+Babylon,190,900,2
+Babylon,745,900,2
+Babylon,1475,900,2
+Ur,200,90,2
+Ur,305,90,2
+Ur,1490,90,2
+Al Mina,72,2,2
+Al Mina,480,2,2
+Chatal Höyük,52,9,2
+Chatal Höyük,60,9,2
+Tell Keisan,53,6,2
+Tell Abu Hawam,70,1,2
+Tel Ya'oz,140,1.5,2
+Ashkelon,285,60,2
+Ashkelon,196,60,2
+Tell el Burak,21,1.8,2
