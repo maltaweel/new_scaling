@@ -52,6 +52,7 @@ def loadData():
     straight=[]
     currentF=[]
     kz=[]
+    
   
     for fil in os.listdir(pathway):
         with open(os.path.join(pathway,fil),'rU') as csvfile:
@@ -59,16 +60,16 @@ def loadData():
             print(csvfile)
            
             for row in reader:   
-                bteween=row['Betweenness']
-                closness=row['Closeness']
-                degree=row['Degree']
-                straigh=row['Straightness']
+                bteween=row['betweenness']
+                closness=row['closeness']
+                degree=row['degree']
+                straigh=row['straightness']
 #                image=row['Image']
-                katz=row['Katz']
-                eigen=row['Eigenvector']
-                cFlow=row['Current Flow']
-                harmonic=row['Harmonic']
-                eff=row['Efficiency']
+                katz=row['katz']
+                eigen=row['eigenvector']
+                cFlow=row['current flow']
+                harmonic=row['harmonic']
+                eff=row['efficiency']
                 
                 between.append(bteween)
                 close.append(closness)
@@ -79,6 +80,7 @@ def loadData():
                 straight.append(straigh)
                 currentF.append(cFlow)
                 kz.append(katz)
+              
                         
           
                 
@@ -91,35 +93,57 @@ def loadData():
     totals['Straightness']=straight
     totals['Current Flow']=currentF
     totals['Katz']=kz
+    
               
     return totals            
      
 '''
 Method to print the results of the output
 '''                   
-def printResults():
+def printResults(totals):
 
-    fieldnames = ['Object','Price','News','Seller','Location','Link']
+    fieldnames = ['Betweenness','Closeness','Degree', 'Current Flow','Katz'
+                  'Harmonic','Eigenvector','Straightness','Efficiency']
     pn=os.path.abspath(__file__)
     pn=pn.split("src")[0]
-    fileOutput=os.path.join(pn,'output',"namedEntityTotal.csv")
+    fileOutput=os.path.join(pn,'output',"totals.csv")
     
     with open(fileOutput, 'wb') as csvf:
         writer = csv.DictWriter(csvf, fieldnames=fieldnames)
         
         writer.writeheader()      
     
-        for i in range(0,len(objects)):
-            
-            writer.writerow({'Object':str(objects[i]),'Price':str(prices[i]),'News':str(news[i]),
-                             'Seller':str(sellers[i]),'Location':str(locations[i]),'Link':str(links[i])})
+        between=totals['Betweenness']
+        close=totals['Closeness']
+        deg=totals['Degree']
+        harm=totals['Harmonic']
+        eigenvector=totals['Eigenvector']
+        eifficiency=totals['Efficiency']
+        straightness=totals['Straightness']
+        currentFlow=totals['Current Flow']
+        katz=totals['Katz']
+        
+        for i in between :
+            b=between[i]
+            c=close[i]
+            d=deg[i]
+            h=harm[i]
+            e=eigenvector[i]
+            ef=eifficiency[i]
+            s=straightness[i]
+            cf=currentFlow[i]
+            k=katz[i]   
+            writer.writerow({'Betweenness':str(b),'Closeness':str(c),'Degree':str(d),
+                             'Harmonic':str(h),'Eigenvector':str(e),
+                             'Straightness':str(s),'Current Flow':str(cf),'Katz':str(k),
+                             'Eifficency':str(ef)})
 '''
 Method to run the module
 '''           
 def run():
 #    train_model()
-    loadData()
-    printResults()
+    totals=loadData()
+    printResults(totals)
     print("Finished")
    
 if __name__ == '__main__':
