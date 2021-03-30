@@ -57,8 +57,9 @@ class FitAnalysis:
         a=0
         for i in range(1,600):
             self.constants.append(a+0.1)
-            a+=1.0
+            a+=0.1
             i+=1
+        
     
     '''
     Method to apply the fit measure applying scaling based on Lobo et al. 2013.
@@ -75,7 +76,10 @@ class FitAnalysis:
                 continue
             
             
-            result=math.log(constant)+(beta*math.log(x))
+            try:
+                result=math.log(constant)+(beta*math.log(x))
+            except:
+                print('stop')
             #result=constant*math.pow(x,beta)
                 
             
@@ -121,12 +125,12 @@ class FitAnalysis:
             for row in reader:
                 
                 #input the site and structure areas
-                site=row['Site']
-                area=float(row['Site Area'])
-                structure_area=float(row['Structure Area'])
-            #    maximum_area=float(row['Maximum Area'])
+                site=row['Town']
+                area=float(row['Area'])
+                structure_area=float(row['Straightness'])
+            #   maximum_area=float(row['Maximum Area'])
             #   minimum_area=float(row['Minimum Area'])
-                pn=int(row["Period n."])
+            #   pn=int(row["Period n."])
                 
                 #this is to filter given periods (if needed)
                 #if pn>=5:
@@ -152,8 +156,8 @@ class FitAnalysis:
     
     def cost(self,b):
         
-        if b<0:
-            b=0
+    #    if b<0:
+    #        b=0
             
        
         beta=b
@@ -178,8 +182,10 @@ class FitAnalysis:
         i = 0
         old_cost = self.cost(0.0)
         currentI=0.01
+        
+        t=0
    
-        while i <150:
+        while i <800:
            
    
             
@@ -187,9 +193,16 @@ class FitAnalysis:
     
             if old_cost > new_cost:
                 old_cost = new_cost
-          
+            
+            elif old_cost==new_cost and i<400:
+                currentI-=0.01 
+                t+=1 
+            else:
+                if currentI<0:
+                    currentI=0.01
+                currentI+=0.01
+                
             i += 1
-            currentI+=0.01
             
     '''
     Using all sites, method to find the range of best fit for 
@@ -269,11 +282,11 @@ class FitAnalysis:
                 
                 
                 
-                if(const>5.0):
+                if(const>100.0):
                     continue
                 
                 
-                if(beta>1.25):
+                if(beta>2.00):
                     continue
                 
                 writer.writerow({'Constant':str(const),
